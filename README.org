@@ -1265,7 +1265,7 @@ manager must be used.
 
 ;; You can also build your own, using clj-http's helper or manually building it:
 (let [cm (conn/make-reusable-conn-manager {})
-      hclient (core/build-http-client {} cm "https://example.com" [])]
+      hclient (core/build-http-client {} false cm "https://example.com" [])]
   (client/get "http://example.com/1"
               {:connection-manager cm :http-client hclient})
   (client/get "http://example.com/2"
